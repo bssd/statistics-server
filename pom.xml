@@ -41,14 +41,28 @@
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.10</version>
+				<scope>test</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.easymock</groupId>
-				<artifactId>easymock</artifactId>
-				<version>3.1</version>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.0</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<dependencies>
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+	</dependencies>
 
 	<organization>
 		<name>BSSD</name>
@@ -59,5 +73,6 @@
 		<module>statistics-server-api</module>
 		<module>statistics-server-client</module>
 		<module>statistics-server-application</module>
+		<module>statistics-server-integration-tests</module>
 	</modules>
 </project>

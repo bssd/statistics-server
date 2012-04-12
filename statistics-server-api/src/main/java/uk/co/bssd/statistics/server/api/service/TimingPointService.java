@@ -5,4 +5,6 @@ import java.util.UUID;
 public interface TimingPointService {
 
 	void startTimingPoint(UUID id, String name); 
+	
+	void stopTimingPoint(UUID id, String name);
 }
