@@ -29,27 +29,35 @@
 		</plugins>
 	</build>
 
-	<dependencies>
-		<dependency>
-			<groupId>uk.co.bssd</groupId>
-			<artifactId>netty-the-elephant</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<!-- Test Dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.1</version>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>uk.co.bssd</groupId>
+				<artifactId>netty-the-elephant</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<!-- Test Dependencies -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>3.1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<organization>
 		<name>BSSD</name>
 		<url>www.bssd.co.uks</url>
 	</organization>
+
+	<modules>
+		<module>statistics-server-api</module>
+		<module>statistics-server-client</module>
+		<module>statistics-server-application</module>
+	</modules>
 </project>
