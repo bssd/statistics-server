@@ -1,0 +1,3 @@
+Simple statistics server that clients will be able to start and stop arbitrary timing points. 
+
+This will allow them to measure the latency of messages throughout an entire application or system rather than simply at a method level.F
