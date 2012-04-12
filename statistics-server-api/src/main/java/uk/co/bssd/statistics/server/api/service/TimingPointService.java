@@ -1,4 +1,4 @@
-package org.statistics.server.api.service;
+package uk.co.bssd.statistics.server.api.service;
 
 import java.util.UUID;
 

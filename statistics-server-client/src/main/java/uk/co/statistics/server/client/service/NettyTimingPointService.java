@@ -2,7 +2,7 @@ package uk.co.statistics.server.client.service;
 
 import java.util.UUID;
 
-import org.statistics.server.api.service.TimingPointService;
+import uk.co.bssd.statistics.server.api.service.TimingPointService;
 
 public class NettyTimingPointService implements TimingPointService {
 
