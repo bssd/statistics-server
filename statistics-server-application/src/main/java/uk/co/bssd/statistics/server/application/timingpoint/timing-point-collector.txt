@@ -1,0 +1,14 @@
+So basically we want to aggregate by the following
+
+time -> name -> id
+
+Do we even care about keeping the individual timing points? Possibly as they might be useful later.
+
+Say we didn't though and we just cared about the time and the name
+
+So you might end up with :
+
+1. A collector that actually delegates out to other collectors
+2. A collector that delegates to a statistic bucket
+
+That would be all you need
