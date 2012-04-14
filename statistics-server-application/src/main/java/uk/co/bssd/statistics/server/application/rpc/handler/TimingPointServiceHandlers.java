@@ -3,7 +3,7 @@ package uk.co.bssd.statistics.server.application.rpc.handler;
 import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
-import uk.co.bssd.statistics.server.api.service.TimingPointService;
+import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
 
 public final class TimingPointServiceHandlers {
 
@@ -12,12 +12,12 @@ public final class TimingPointServiceHandlers {
 	}
 
 	public static void bindHandlers(RpcServer rpcServer,
-			TimingPointService timingPointService) {
+			StatisticsServerFacade statisticsServerFacade) {
 		rpcServer.registerAsynchronousMessageHandler(
 				StartTimingPointRequest.class,
-				new StartTimingPointRequestHandler(timingPointService));
+				new StartTimingPointRequestHandler(statisticsServerFacade));
 		rpcServer.registerAsynchronousMessageHandler(
 				StopTimingPointRequest.class,
-				new StopTimingPointRequestHandler(timingPointService));
+				new StopTimingPointRequestHandler(statisticsServerFacade));
 	}
 }
