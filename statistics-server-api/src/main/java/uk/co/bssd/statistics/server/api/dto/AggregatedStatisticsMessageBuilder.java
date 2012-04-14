@@ -3,21 +3,21 @@ package uk.co.bssd.statistics.server.api.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatisticsMessageBuilder {
+public class AggregatedStatisticsMessageBuilder {
 
 	private final List<AggregatedStatisticsBuilder> aggregatedStatisticsBuilders;
 	
-	public StatisticsMessageBuilder() {
+	public AggregatedStatisticsMessageBuilder() {
 		this.aggregatedStatisticsBuilders = new ArrayList<AggregatedStatisticsBuilder>();
 	}
 	
-	public StatisticsMessageBuilder withAggregatedStatistics(AggregatedStatisticsBuilder builder) {
+	public AggregatedStatisticsMessageBuilder withAggregatedStatistics(AggregatedStatisticsBuilder builder) {
 		this.aggregatedStatisticsBuilders.add(builder);
 		return this;
 	}
 	
-	public StatisticsMessage build() {
-		return new StatisticsMessage(aggregatedStatistics());
+	public AggregatedStatisticsMessage build() {
+		return new AggregatedStatisticsMessage(aggregatedStatistics());
 	}
 	
 	private List<AggregatedStatistics> aggregatedStatistics() {

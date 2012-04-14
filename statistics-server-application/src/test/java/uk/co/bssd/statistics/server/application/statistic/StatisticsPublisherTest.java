@@ -14,10 +14,9 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import uk.co.bssd.statistics.server.api.dto.StatisticsMessage;
+import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPoint;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -33,7 +32,7 @@ public class StatisticsPublisherTest {
 	private StatisticsPublisher publisher;
 	
 	@Captor
-	private ArgumentCaptor<StatisticsMessage> messageCaptor;
+	private ArgumentCaptor<AggregatedStatisticsMessage> messageCaptor;
 
 	@Before
 	public void before() {
@@ -44,7 +43,7 @@ public class StatisticsPublisherTest {
 	@Test
 	public void testPublishOnACollectorWithNoTimingPointsResultsInAMessageWithNoAggregatedStatistics() {
 		this.publisher.publish();
-		StatisticsMessage message = assertSingleStatisticsMessagePublished();
+		AggregatedStatisticsMessage message = assertSingleStatisticsMessagePublished();
 		assertThat(message.aggregatedStatisticsCount(), is(0));
 	}
 	
@@ -53,7 +52,7 @@ public class StatisticsPublisherTest {
 		this.statisticsCollector.addTimingPoint(TIMING_POINT);
 		this.publisher.publish();
 		
-		StatisticsMessage message = assertSingleStatisticsMessagePublished();
+		AggregatedStatisticsMessage message = assertSingleStatisticsMessagePublished();
 		assertThat(message.aggregatedStatisticsCount(), is(1));
 	}
 	
@@ -63,17 +62,17 @@ public class StatisticsPublisherTest {
 		this.publisher.publish();
 		this.publisher.publish();
 		
-		List<StatisticsMessage> messages = assertMultipleStatisticsMessagesPublished(2);
+		List<AggregatedStatisticsMessage> messages = assertMultipleStatisticsMessagesPublished(2);
 		assertThat(messages.get(0).aggregatedStatisticsCount(), is(1));
 		assertThat(messages.get(1).aggregatedStatisticsCount(), is(0));
 	}
 	
-	private List<StatisticsMessage> assertMultipleStatisticsMessagesPublished(int expectedNumber) {
+	private List<AggregatedStatisticsMessage> assertMultipleStatisticsMessagesPublished(int expectedNumber) {
 		verifyNumberStatisticMessagesPublished(expectedNumber);
 		return this.messageCaptor.getAllValues();
 	}
 	
-	private StatisticsMessage assertSingleStatisticsMessagePublished() {
+	private AggregatedStatisticsMessage assertSingleStatisticsMessagePublished() {
 		verifyNumberStatisticMessagesPublished(1);
 		return this.messageCaptor.getValue();
 	}

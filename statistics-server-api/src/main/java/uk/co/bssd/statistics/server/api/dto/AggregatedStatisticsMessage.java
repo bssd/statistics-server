@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class StatisticsMessage implements Serializable, Iterable<AggregatedStatistics> {
+public class AggregatedStatisticsMessage implements Serializable, Iterable<AggregatedStatistics> {
 
 	private static final long serialVersionUID = 1L;
 
 	private final List<AggregatedStatistics> aggregatedStatistics;
 	
-	public StatisticsMessage(List<AggregatedStatistics> statistics) {
+	public AggregatedStatisticsMessage(List<AggregatedStatistics> statistics) {
 		this.aggregatedStatistics = Collections.unmodifiableList(statistics);
 	}
 

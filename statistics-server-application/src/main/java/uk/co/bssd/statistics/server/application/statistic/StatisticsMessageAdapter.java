@@ -3,13 +3,13 @@ package uk.co.bssd.statistics.server.application.statistic;
 import java.util.Collection;
 
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsBuilder;
-import uk.co.bssd.statistics.server.api.dto.StatisticsMessage;
-import uk.co.bssd.statistics.server.api.dto.StatisticsMessageBuilder;
+import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
+import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessageBuilder;
 
 public class StatisticsMessageAdapter {
 
-	public static StatisticsMessage from(Collection<StatisticsBucket> buckets) {
-		StatisticsMessageBuilder messageBuilder = new StatisticsMessageBuilder();
+	public static AggregatedStatisticsMessage from(Collection<StatisticsBucket> buckets) {
+		AggregatedStatisticsMessageBuilder messageBuilder = new AggregatedStatisticsMessageBuilder();
 		
 		for (StatisticsBucket bucket : buckets) {
 			messageBuilder.withAggregatedStatistics(toBuilder(bucket));

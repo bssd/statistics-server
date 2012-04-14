@@ -1,8 +1,8 @@
 package uk.co.bssd.statistics.server.application.statistic;
 
-import uk.co.bssd.statistics.server.api.dto.StatisticsMessage;
+import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
 
 public interface StatisticsPublishingService {
 
-	void publish(StatisticsMessage message);
+	void publish(AggregatedStatisticsMessage message);
 }

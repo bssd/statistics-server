@@ -2,7 +2,7 @@ package uk.co.bssd.statistics.server.application.statistic;
 
 import java.util.Collection;
 
-import uk.co.bssd.statistics.server.api.dto.StatisticsMessage;
+import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
 
 public class StatisticsPublisher {
 
@@ -16,7 +16,7 @@ public class StatisticsPublisher {
 	
 	public void publish() {
 		Collection<StatisticsBucket> buckets = this.statisticsCollector.clearBuckets();
-		StatisticsMessage message = StatisticsMessageAdapter.from(buckets);
+		AggregatedStatisticsMessage message = StatisticsMessageAdapter.from(buckets);
 		this.publishingService.publish(message);
 	}
 }
