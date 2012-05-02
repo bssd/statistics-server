@@ -17,12 +17,16 @@ public class SetTimingPointsCollector implements TimingPointsCollector {
 
 	@Override
 	public void addTimingPoint(TimingPoint timingPoint) {
-		for (TimingPointsCollector collector : collectors) {
+		for (TimingPointsCollector collector : this.collectors) {
 			try {
 				collector.addTimingPoint(timingPoint);
 			} catch (RuntimeException e) {
 				// TODO : log exception and carry on
 			}
 		}
+	}
+	
+	public int countCollectors() {
+		return this.collectors.size();
 	}
 }
