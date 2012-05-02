@@ -2,8 +2,6 @@ package uk.co.bssd.statistics.server.application.statistic;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.xml.bind.ValidationEvent;
-
 import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsCollector;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 
