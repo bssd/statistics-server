@@ -2,14 +2,19 @@ package uk.co.bssd.statistics.server.application.statistic;
 
 import java.util.concurrent.TimeUnit;
 
+import uk.co.bssd.statistics.server.application.scheduler.Scheduler;
 import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsCollector;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 
 public final class TimeIntervalCollectors {
 
-	private StatisticsPublisherJobFactory publisherJobFactory;
+	private static final int TIME_UNIT = 1;
 	
-	public TimeIntervalCollectors(StatisticsPublisherJobFactory factory) {
+	private final Scheduler scheduler;
+	private final StatisticsPublisherJobFactory publisherJobFactory;
+	
+	public TimeIntervalCollectors(Scheduler scheduler, StatisticsPublisherJobFactory factory) {
+		this.scheduler = scheduler;
 		this.publisherJobFactory = factory;
 	}
 	
@@ -24,7 +29,8 @@ public final class TimeIntervalCollectors {
 			StatisticsCollector collector = new StatisticsCollector();
 			collectors.registerCollector(collector);
 			
-			this.publisherJobFactory.createJob(interval, collector);
+			StatisticsPublisherJob publisherJob = this.publisherJobFactory.createJob(collector);
+			this.scheduler.scheduleAtFixedRate(publisherJob, TIME_UNIT, interval);
 		}
 		
 		return collectors;
