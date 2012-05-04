@@ -1,11 +1,11 @@
 package uk.co.bssd.statistics.server.application.statistic;
 
-public class SchedulingStatisticsPublisherJobFactory implements
+public class DefaultStatisticsPublisherJobFactory implements
 		StatisticsPublisherJobFactory {
 
 	private final StatisticsPublishingService publishingService;
 
-	public SchedulingStatisticsPublisherJobFactory(
+	public DefaultStatisticsPublisherJobFactory(
 			StatisticsPublishingService publishingService) {
 		this.publishingService = publishingService;
 	}
