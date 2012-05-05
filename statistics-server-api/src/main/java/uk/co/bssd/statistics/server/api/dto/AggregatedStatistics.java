@@ -26,7 +26,7 @@ public class AggregatedStatistics implements Serializable{
 		return this.timingPointName;
 	}
 	
-	public int count() {
+	public int timingPoingCount() {
 		return this.timingPountCount;
 	}
 	
