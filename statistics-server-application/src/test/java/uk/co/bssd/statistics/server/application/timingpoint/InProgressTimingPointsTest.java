@@ -9,20 +9,20 @@ import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
 
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 
 public class InProgressTimingPointsTest {
 
 	private static final UUID ID = UUID.randomUUID();
 	private static final String NAME = "timing_point";
 
-	private static final StartTimingPointRequest START_REQUEST = new StartTimingPointRequest(
+	private static final StartTimingPointMessage START_REQUEST = new StartTimingPointMessage(
 			ID, NAME, 23);
-	private static final StopTimingPointRequest STOP_REQUEST = new StopTimingPointRequest(
+	private static final StopTimingPointMessage STOP_REQUEST = new StopTimingPointMessage(
 			ID, NAME, 47);
 
-	private static final StopTimingPointRequest STOP_REQUEST_WITH_DIFFERENT_ID = new StopTimingPointRequest(
+	private static final StopTimingPointMessage STOP_REQUEST_WITH_DIFFERENT_ID = new StopTimingPointMessage(
 			UUID.randomUUID(), NAME, 56);
 
 	private InProgressTimingPoints timingPoints;

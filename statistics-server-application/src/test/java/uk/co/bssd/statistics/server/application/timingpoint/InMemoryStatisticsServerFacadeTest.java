@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.application.service.InMemoryStatisticsServerFacade;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
 
@@ -26,9 +26,9 @@ public class InMemoryStatisticsServerFacadeTest {
 	private static final long START_TIME = 34;
 	private static final long END_TIME = 67;
 	
-	private static final StartTimingPointRequest START_REQUEST = new StartTimingPointRequest(ID, NAME, START_TIME);
-	private static final StopTimingPointRequest STOP_REQUEST = new StopTimingPointRequest(ID, NAME, END_TIME);
-	private static final StopTimingPointRequest STOP_REQUEST_WITH_DIFFERENT_ID = new StopTimingPointRequest(UUID.randomUUID(), NAME, END_TIME);
+	private static final StartTimingPointMessage START_REQUEST = new StartTimingPointMessage(ID, NAME, START_TIME);
+	private static final StopTimingPointMessage STOP_REQUEST = new StopTimingPointMessage(ID, NAME, END_TIME);
+	private static final StopTimingPointMessage STOP_REQUEST_WITH_DIFFERENT_ID = new StopTimingPointMessage(UUID.randomUUID(), NAME, END_TIME);
 	
 	private StatisticsServerFacade facade;
 

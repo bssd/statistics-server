@@ -1,7 +1,7 @@
 package uk.co.bssd.statistics.server.application.service;
 
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.application.timingpoint.InProgressTimingPointsManager;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPoint;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
@@ -17,12 +17,12 @@ public class InMemoryStatisticsServerFacade implements StatisticsServerFacade {
 	}
 
 	@Override
-	public void startTimingPoint(StartTimingPointRequest request) {
+	public void startTimingPoint(StartTimingPointMessage request) {
 		this.timingPointsManager.startTimingPoint(request);
 	}
 
 	@Override
-	public void stopTimingPoint(StopTimingPointRequest request) {
+	public void stopTimingPoint(StopTimingPointMessage request) {
 		if (this.timingPointsManager.containsStartedTimingPoint(request)) {
 			TimingPoint timingPoint = this.timingPointsManager
 					.stopTimingPointRequest(request);

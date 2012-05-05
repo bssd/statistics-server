@@ -22,7 +22,7 @@ import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsColle
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TimeIntervalCollectorsTest {
+public class TimeIntervalCollectorsFactoryTest {
 
 	private static final TimeUnit TIME_UNIT_1 = TimeUnit.HOURS;
 	private static final TimeUnit TIME_UNIT_2 = TimeUnit.DAYS;
@@ -33,11 +33,11 @@ public class TimeIntervalCollectorsTest {
 	@Mock
 	private StatisticsPublisherJobFactory mockJobFactory;
 
-	private TimeIntervalCollectors collectors;
+	private TimeIntervalCollectorsFactory collectors;
 
 	@Before
 	public void before() {
-		this.collectors = new TimeIntervalCollectors(this.mockScheduler, this.mockJobFactory);
+		this.collectors = new TimeIntervalCollectorsFactory(this.mockScheduler, this.mockJobFactory);
 		when(this.mockJobFactory.createJob(any(StatisticsCollector.class))).thenReturn(mock(StatisticsPublisherJob.class));
 	}
 

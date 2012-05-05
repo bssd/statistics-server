@@ -2,7 +2,7 @@ package uk.co.bssd.statistics.server.application.timingpoint;
 
 import java.util.UUID;
 
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 
 public class TimingPointBuilder {
 
@@ -39,7 +39,7 @@ public class TimingPointBuilder {
 		return new TimingPoint(this.id, this.name, this.millisecondStartTime, this.millisecondEndTime);
 	}
 	
-	public static TimingPointBuilder from(StartTimingPointRequest request) {
+	public static TimingPointBuilder from(StartTimingPointMessage request) {
 		TimingPointBuilder builder = new TimingPointBuilder();
 		builder.withId(request.id());
 		builder.withName(request.name());

@@ -6,14 +6,14 @@ import uk.co.bssd.statistics.server.application.scheduler.Scheduler;
 import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsCollector;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 
-public final class TimeIntervalCollectors {
+public final class TimeIntervalCollectorsFactory {
 
 	private static final int TIME_UNIT = 1;
 	
 	private final Scheduler scheduler;
 	private final StatisticsPublisherJobFactory publisherJobFactory;
 	
-	public TimeIntervalCollectors(Scheduler scheduler, StatisticsPublisherJobFactory factory) {
+	public TimeIntervalCollectorsFactory(Scheduler scheduler, StatisticsPublisherJobFactory factory) {
 		this.scheduler = scheduler;
 		this.publisherJobFactory = factory;
 	}

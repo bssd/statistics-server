@@ -3,8 +3,8 @@ package uk.co.bssd.statistics.server.application.timingpoint;
 import java.util.HashMap;
 import java.util.Map;
 
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 
 public class InProgressTimingPointsManager {
 
@@ -14,17 +14,17 @@ public class InProgressTimingPointsManager {
 		this.timingPoints = new HashMap<String, InProgressTimingPoints>();
 	}
 
-	public void startTimingPoint(StartTimingPointRequest request) {
+	public void startTimingPoint(StartTimingPointMessage request) {
 		timingPoints(request.name()).startTimingPoint(request);
 	}
 
-	public boolean containsStartedTimingPoint(StopTimingPointRequest request) {
+	public boolean containsStartedTimingPoint(StopTimingPointMessage request) {
 		String name = request.name();
 		return hasTimingPoints(name)
 				&& timingPoints(name).containsStartedTimingPoint(request);
 	}
 
-	public TimingPoint stopTimingPointRequest(StopTimingPointRequest request) {
+	public TimingPoint stopTimingPointRequest(StopTimingPointMessage request) {
 		if (!containsStartedTimingPoint(request)) {
 			throw new IllegalStateException(String.format("No timing point started with id [%s] and name [%s]", request.id(), request.name()));
 		}

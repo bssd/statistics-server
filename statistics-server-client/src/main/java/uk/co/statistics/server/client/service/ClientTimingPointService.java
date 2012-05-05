@@ -5,8 +5,8 @@ import java.util.UUID;
 import org.joda.time.DateTime;
 
 import uk.co.bssd.netty.client.RpcClient;
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.api.service.TimingPointService;
 
 public class ClientTimingPointService implements TimingPointService {
@@ -19,13 +19,13 @@ public class ClientTimingPointService implements TimingPointService {
 
 	@Override
 	public void startTimingPoint(UUID id, String name) {
-		StartTimingPointRequest request = new StartTimingPointRequest(id, name, nowInMillis());
+		StartTimingPointMessage request = new StartTimingPointMessage(id, name, nowInMillis());
 		this.client.sendAsync(request);
 	}
 	
 	@Override
 	public void stopTimingPoint(UUID id, String name) {
-		StopTimingPointRequest request = new StopTimingPointRequest(id, name, nowInMillis());
+		StopTimingPointMessage request = new StopTimingPointMessage(id, name, nowInMillis());
 		this.client.sendAsync(request);
 	}
 	

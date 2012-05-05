@@ -15,8 +15,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.netty.server.RpcServer;
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.api.service.TimingPointService;
 import uk.co.bssd.statistics.server.application.rpc.handler.TimingPointServiceHandlers;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
@@ -66,7 +66,7 @@ public class ClientServerCommsIntegrationTest {
 		this.clientService.startTimingPoint(TIMING_POINT_ID, TIMING_POINT_NAME);
 		verify(this.mockServerFacade,
 				timeout(SERVER_RECEIVE_MESSAGE_TIMEOUT_MILLIS))
-				.startTimingPoint(any(StartTimingPointRequest.class));
+				.startTimingPoint(any(StartTimingPointMessage.class));
 	}
 
 	@Test
@@ -74,6 +74,6 @@ public class ClientServerCommsIntegrationTest {
 		this.clientService.stopTimingPoint(TIMING_POINT_ID, TIMING_POINT_NAME);
 		verify(this.mockServerFacade,
 				timeout(SERVER_RECEIVE_MESSAGE_TIMEOUT_MILLIS))
-				.stopTimingPoint(any(StopTimingPointRequest.class));
+				.stopTimingPoint(any(StopTimingPointMessage.class));
 	}
 }

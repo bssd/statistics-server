@@ -1,8 +1,8 @@
 package uk.co.bssd.statistics.server.application.rpc.handler;
 
 import uk.co.bssd.netty.server.RpcServer;
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
-import uk.co.bssd.statistics.server.api.dto.StopTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
+import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
 
 public final class TimingPointServiceHandlers {
@@ -14,10 +14,10 @@ public final class TimingPointServiceHandlers {
 	public static void bindHandlers(RpcServer rpcServer,
 			StatisticsServerFacade statisticsServerFacade) {
 		rpcServer.registerAsynchronousMessageHandler(
-				StartTimingPointRequest.class,
+				StartTimingPointMessage.class,
 				new StartTimingPointRequestHandler(statisticsServerFacade));
 		rpcServer.registerAsynchronousMessageHandler(
-				StopTimingPointRequest.class,
+				StopTimingPointMessage.class,
 				new StopTimingPointRequestHandler(statisticsServerFacade));
 	}
 }

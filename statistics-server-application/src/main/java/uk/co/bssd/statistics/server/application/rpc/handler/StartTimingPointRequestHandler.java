@@ -1,10 +1,10 @@
 package uk.co.bssd.statistics.server.application.rpc.handler;
 
 import uk.co.bssd.netty.server.AsynchronousMessageHandler;
-import uk.co.bssd.statistics.server.api.dto.StartTimingPointRequest;
+import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
 
-public class StartTimingPointRequestHandler implements AsynchronousMessageHandler<StartTimingPointRequest>{
+public class StartTimingPointRequestHandler implements AsynchronousMessageHandler<StartTimingPointMessage>{
 
 	private final StatisticsServerFacade service;
 	
@@ -13,7 +13,7 @@ public class StartTimingPointRequestHandler implements AsynchronousMessageHandle
 	}
 	
 	@Override
-	public void onMessage(StartTimingPointRequest message) {
+	public void onMessage(StartTimingPointMessage message) {
 		this.service.startTimingPoint(message);
 	}
 }
