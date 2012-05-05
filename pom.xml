@@ -66,11 +66,13 @@
 
 	<organization>
 		<name>BSSD</name>
-		<url>www.bssd.co.uks</url>
+		<url>www.bssd.co.uk</url>
 	</organization>
 
 	<modules>
 		<module>statistics-server-api</module>
+		<module>statistics-server-common</module>
+		<module>statistics-server-test</module>
 		<module>statistics-server-client</module>
 		<module>statistics-server-application</module>
 		<module>statistics-server-integration-tests</module>

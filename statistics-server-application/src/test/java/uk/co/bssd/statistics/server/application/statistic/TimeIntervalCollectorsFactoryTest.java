@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import uk.co.bssd.statistics.server.application.scheduler.Scheduler;
+import uk.co.bssd.common.scheduler.Scheduler;
 import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsCollector;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 

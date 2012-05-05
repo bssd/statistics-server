@@ -15,13 +15,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import uk.co.bssd.common.scheduler.ManualScheduler;
 import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.netty.server.SubscribeListener;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
-import uk.co.bssd.statistics.server.application.scheduler.ManualScheduler;
 
 public class StatisticsServerTest {
 

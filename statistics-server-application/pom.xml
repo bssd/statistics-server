@@ -13,8 +13,24 @@
 	<dependencies>
 		<dependency>
 			<groupId>uk.co.bssd</groupId>
-			<artifactId>statistics-server-client</artifactId>
+			<artifactId>statistics-server-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>uk.co.bssd</groupId>
+			<artifactId>statistics-server-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>uk.co.bssd</groupId>
+			<artifactId>netty-the-elephant</artifactId>
+		</dependency>	
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>uk.co.bssd</groupId>
+			<artifactId>statistics-server-test</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>	
 	</dependencies>
 </project>

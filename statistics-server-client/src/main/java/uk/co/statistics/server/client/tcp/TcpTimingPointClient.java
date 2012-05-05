@@ -1,4 +1,4 @@
-package uk.co.statistics.server.client.service;
+package uk.co.statistics.server.client.tcp;
 
 import java.util.UUID;
 
@@ -7,13 +7,13 @@ import org.joda.time.DateTime;
 import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
-import uk.co.bssd.statistics.server.api.service.TimingPointService;
+import uk.co.statistics.server.client.TimingPointClient;
 
-public class ClientTimingPointService implements TimingPointService {
+public class TcpTimingPointClient implements TimingPointClient {
 
 	private final RpcClient client;
 	
-	public ClientTimingPointService(RpcClient client) {
+	public TcpTimingPointClient(RpcClient client) {
 		this.client = client;
 	}
 

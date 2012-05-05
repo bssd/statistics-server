@@ -1,4 +1,4 @@
-package uk.co.bssd.statistics.server.application.scheduler;
+package uk.co.bssd.common.scheduler;
 
 import static org.mockito.Matchers.anyLong;
 import static org.mockito.Matchers.eq;
@@ -18,6 +18,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import uk.co.bssd.common.scheduler.JdkTimerScheduler;
+import uk.co.bssd.common.scheduler.Scheduler;
 
 @RunWith(MockitoJUnitRunner.class)
 public class JdkTimerSchedulerTest {

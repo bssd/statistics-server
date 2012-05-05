@@ -1,4 +1,4 @@
-package uk.co.bssd.statistics.server.application.scheduler;
+package uk.co.bssd.common.scheduler;
 
 import java.util.Timer;
 import java.util.TimerTask;

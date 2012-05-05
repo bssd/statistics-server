@@ -17,10 +17,10 @@ import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
-import uk.co.bssd.statistics.server.api.service.TimingPointService;
 import uk.co.bssd.statistics.server.application.rpc.handler.TimingPointServiceHandlers;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
-import uk.co.statistics.server.client.service.ClientTimingPointService;
+import uk.co.statistics.server.client.TimingPointClient;
+import uk.co.statistics.server.client.tcp.TcpTimingPointClient;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ClientServerCommsIntegrationTest {
@@ -35,7 +35,7 @@ public class ClientServerCommsIntegrationTest {
 	private static final String TIMING_POINT_NAME = "timing_point";
 
 	private RpcClient rpcClient;
-	private TimingPointService clientService;
+	private TimingPointClient clientService;
 
 	private RpcServer rpcServer;
 
@@ -45,7 +45,7 @@ public class ClientServerCommsIntegrationTest {
 	@Before
 	public void before() {
 		this.rpcClient = new RpcClient();
-		this.clientService = new ClientTimingPointService(this.rpcClient);
+		this.clientService = new TcpTimingPointClient(this.rpcClient);
 
 		this.rpcServer = new RpcServer();
 		TimingPointServiceHandlers.bindHandlers(this.rpcServer,

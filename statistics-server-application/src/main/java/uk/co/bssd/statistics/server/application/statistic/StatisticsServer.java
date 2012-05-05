@@ -2,10 +2,10 @@ package uk.co.bssd.statistics.server.application.statistic;
 
 import java.util.concurrent.TimeUnit;
 
+import uk.co.bssd.common.scheduler.Scheduler;
 import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.application.rpc.handler.TimingPointServiceHandlers;
 import uk.co.bssd.statistics.server.application.rpc.statistic.NettyStatisticsPublishingService;
-import uk.co.bssd.statistics.server.application.scheduler.Scheduler;
 import uk.co.bssd.statistics.server.application.service.InMemoryStatisticsServerFacade;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;

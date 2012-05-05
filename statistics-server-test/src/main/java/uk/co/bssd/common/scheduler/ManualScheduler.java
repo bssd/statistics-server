@@ -1,8 +1,10 @@
-package uk.co.bssd.statistics.server.application.scheduler;
+package uk.co.bssd.common.scheduler;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import uk.co.bssd.common.scheduler.Scheduler;
 
 public class ManualScheduler implements Scheduler {
 

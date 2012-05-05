@@ -2,7 +2,7 @@ package uk.co.bssd.statistics.server.application.statistic;
 
 import java.util.concurrent.TimeUnit;
 
-import uk.co.bssd.statistics.server.application.scheduler.Scheduler;
+import uk.co.bssd.common.scheduler.Scheduler;
 import uk.co.bssd.statistics.server.application.timingpoint.SetTimingPointsCollector;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
 

@@ -1,8 +1,8 @@
-package uk.co.bssd.statistics.server.api.service;
+package uk.co.statistics.server.client;
 
 import java.util.UUID;
 
-public interface TimingPointService {
+public interface TimingPointClient {
 
 	void startTimingPoint(UUID id, String name); 
 	
