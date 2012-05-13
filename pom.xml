@@ -36,6 +36,11 @@
 				<artifactId>netty-the-elephant</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.9.7</version>
+			</dependency>
 			<!-- Test Dependencies -->
 			<dependency>
 				<groupId>junit</groupId>
@@ -75,6 +80,7 @@
 		<module>statistics-server-test</module>
 		<module>statistics-server-client</module>
 		<module>statistics-server-application</module>
+		<module>statistics-server-monitoring</module>
 		<module>statistics-server-integration-tests</module>
 	</modules>
 </project>

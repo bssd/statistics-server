@@ -32,7 +32,7 @@ public class StatisticsBucket implements TimingPointsCollector {
 		}
 
 		if (this.maximumDuration == null
-				|| this.maximumDuration.longValue() > duration) {
+				|| this.maximumDuration.longValue() < duration) {
 			this.maximumDuration = duration;
 		}
 	}
