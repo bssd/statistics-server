@@ -16,12 +16,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import uk.co.bssd.netty.client.RpcClient;
-import uk.co.bssd.netty.server.RpcServer;
-import uk.co.bssd.netty.server.SubscribeListener;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessageBuilder;
 import uk.co.bssd.statistics.server.application.statistic.StatisticsPublishingService;
+import uk.co.bssd.vesta.client.RpcClient;
+import uk.co.bssd.vesta.server.RpcServer;
+import uk.co.bssd.vesta.server.SubscribeListener;
 
 public class NettyStatisticsPublishingServiceTest {
 

@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import uk.co.bssd.common.scheduler.JdkTimerScheduler;
-import uk.co.bssd.netty.client.RpcClient;
-import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.application.statistic.StatisticsServer;
+import uk.co.bssd.vesta.client.RpcClient;
+import uk.co.bssd.vesta.server.RpcServer;
 import uk.co.statistics.server.client.StatisticsClient;
 import uk.co.statistics.server.client.TimingPointClient;
 import uk.co.statistics.server.client.tcp.TcpStatisticsClient;

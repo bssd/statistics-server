@@ -3,7 +3,7 @@ package uk.co.bssd.statistics.server.monitoring;
 import java.util.Random;
 import java.util.UUID;
 
-import uk.co.bssd.netty.client.RpcClient;
+import uk.co.bssd.vesta.client.RpcClient;
 import uk.co.statistics.server.client.TimingPointClient;
 import uk.co.statistics.server.client.tcp.TcpTimingPointClient;
 

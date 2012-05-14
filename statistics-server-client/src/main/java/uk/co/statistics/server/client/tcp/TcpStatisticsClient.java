@@ -5,8 +5,8 @@ import static uk.co.bssd.statistics.server.api.StatisticsServerConstants.NETTY_B
 import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
+import uk.co.bssd.vesta.client.RpcClient;
 import uk.co.statistics.server.client.AggregatedStatisticsListener;
 import uk.co.statistics.server.client.Listeners;
 import uk.co.statistics.server.client.StatisticsClient;

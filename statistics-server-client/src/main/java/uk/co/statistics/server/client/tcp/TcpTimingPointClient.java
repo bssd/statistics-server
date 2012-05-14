@@ -4,9 +4,9 @@ import java.util.UUID;
 
 import org.joda.time.DateTime;
 
-import uk.co.bssd.netty.client.RpcClient;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
+import uk.co.bssd.vesta.client.RpcClient;
 import uk.co.statistics.server.client.TimingPointClient;
 
 public class TcpTimingPointClient implements TimingPointClient {

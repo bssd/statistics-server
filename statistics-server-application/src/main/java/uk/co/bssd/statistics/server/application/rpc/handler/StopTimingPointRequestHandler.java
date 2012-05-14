@@ -1,8 +1,8 @@
 package uk.co.bssd.statistics.server.application.rpc.handler;
 
-import uk.co.bssd.netty.server.AsynchronousMessageHandler;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
+import uk.co.bssd.vesta.server.AsynchronousMessageHandler;
 
 public class StopTimingPointRequestHandler implements AsynchronousMessageHandler<StopTimingPointMessage>{
 

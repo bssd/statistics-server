@@ -19,11 +19,11 @@ import org.jboss.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.jboss.netty.logging.InternalLogger;
 import org.jboss.netty.logging.InternalLoggerFactory;
 
-import uk.co.bssd.netty.client.RpcClient;
-import uk.co.bssd.netty.server.websocket.WebSocketServer;
-import uk.co.bssd.netty.server.websocket.WebSocketServerPipelineFactory;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatistics;
 import uk.co.bssd.statistics.server.api.dto.AggregatedStatisticsMessage;
+import uk.co.bssd.vesta.client.RpcClient;
+import uk.co.bssd.vesta.server.websocket.WebSocketServer;
+import uk.co.bssd.vesta.server.websocket.WebSocketServerPipelineFactory;
 import uk.co.statistics.server.client.AggregatedStatisticsListener;
 import uk.co.statistics.server.client.StatisticsClient;
 import uk.co.statistics.server.client.tcp.TcpStatisticsClient;

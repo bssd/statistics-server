@@ -13,12 +13,12 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import uk.co.bssd.netty.client.RpcClient;
-import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.api.dto.StartTimingPointMessage;
 import uk.co.bssd.statistics.server.api.dto.StopTimingPointMessage;
 import uk.co.bssd.statistics.server.application.rpc.handler.TimingPointServiceHandlers;
 import uk.co.bssd.statistics.server.application.service.StatisticsServerFacade;
+import uk.co.bssd.vesta.client.RpcClient;
+import uk.co.bssd.vesta.server.RpcServer;
 import uk.co.statistics.server.client.TimingPointClient;
 import uk.co.statistics.server.client.tcp.TcpTimingPointClient;
 

@@ -3,7 +3,6 @@ package uk.co.bssd.statistics.server.application;
 import java.util.concurrent.TimeUnit;
 
 import uk.co.bssd.common.scheduler.JdkTimerScheduler;
-import uk.co.bssd.netty.server.RpcServer;
 import uk.co.bssd.statistics.server.application.rpc.handler.TimingPointServiceHandlers;
 import uk.co.bssd.statistics.server.application.rpc.statistic.NettyStatisticsPublishingService;
 import uk.co.bssd.statistics.server.application.service.InMemoryStatisticsServerFacade;
@@ -11,6 +10,7 @@ import uk.co.bssd.statistics.server.application.statistic.DefaultStatisticsPubli
 import uk.co.bssd.statistics.server.application.statistic.StatisticsPublishingService;
 import uk.co.bssd.statistics.server.application.statistic.TimeIntervalCollectorsFactory;
 import uk.co.bssd.statistics.server.application.timingpoint.TimingPointsCollector;
+import uk.co.bssd.vesta.server.RpcServer;
 
 public class Bootstrapper {
 
