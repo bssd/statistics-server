@@ -18,7 +18,7 @@
 		</dependency>
 		<dependency>
 			<groupId>uk.co.bssd</groupId>
-			<artifactId>netty-the-elephant</artifactId>
+			<artifactId>vesta</artifactId>
 		</dependency>
 	</dependencies>
 </project>

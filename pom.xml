@@ -33,7 +33,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>uk.co.bssd</groupId>
-				<artifactId>netty-the-elephant</artifactId>
+				<artifactId>vesta</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
