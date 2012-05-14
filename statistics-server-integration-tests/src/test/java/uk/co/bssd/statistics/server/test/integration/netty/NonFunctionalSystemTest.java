@@ -24,7 +24,6 @@ public class NonFunctionalSystemTest {
 
 	private static final String SERVER_HOST = "127.0.0.1";
 	private static final int SERVER_PORT = 6777;
-	private static final long CLIENT_CONNECTION_TIMEOUT_MS = 1000;
 	
 	private StatisticsServer statisticsServer;
 
@@ -44,12 +43,12 @@ public class NonFunctionalSystemTest {
 		this.statisticsServer.start();
 
 		this.rpcClient = new RpcClient();
-		this.rpcClient.start(SERVER_HOST, SERVER_PORT,
-				CLIENT_CONNECTION_TIMEOUT_MS);
 
 		this.completeTimingPointCounter = new CompleteTimingPointCounter();
 
-		this.statisticsClient = new TcpStatisticsClient(this.rpcClient);
+		this.statisticsClient = new TcpStatisticsClient(this.rpcClient, SERVER_HOST, SERVER_PORT);
+		this.statisticsClient.start();
+		
 		this.statisticsClient
 				.registerAggregatedStatisticsListener(this.completeTimingPointCounter);
 
@@ -58,7 +57,7 @@ public class NonFunctionalSystemTest {
 
 	@After
 	public void after() {
-		this.rpcClient.stop();
+		this.statisticsClient.stop();
 		this.statisticsServer.stop();
 	}
 
